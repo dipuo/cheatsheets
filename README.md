@@ -58,3 +58,23 @@ $ cd ..
 $ xelatex cheatsheets.tex
 $ xelatex cheatsheets.tex
 ```
+
+# 股票组合跟踪应用（含分红）
+
+新增了一个基于 Streamlit 的组合跟踪工具：`portfolio_tracker/app.py`。
+
+## 功能
+
+- 从 Yahoo Finance（免费）抓取股票历史收盘价与分红数据
+- 按持仓股数计算组合市值曲线
+- 计算并累加分红现金流，输出“含分红总价值”曲线
+- 展示区间总收益率变化曲线
+
+## 运行方式
+
+```bash
+pip install -r portfolio_tracker/requirements.txt
+streamlit run portfolio_tracker/app.py
+```
+
+应用默认内置了你提供截图中的 10 只股票与持仓股数，可直接计算；也可在页面中粘贴自定义 `ticker,shares` CSV。
